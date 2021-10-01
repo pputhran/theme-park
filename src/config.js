@@ -24,7 +24,7 @@ export const appConfig = {
   //
   images: {
     parkMapURL: 'https://d15l97sovqpx31.cloudfront.net/images/theme-park-map-large.jpg',
-    logoURL: 'https://d15l97sovqpx31.cloudfront.net/images/theme-park-logo-150.png'
+    logoURL: 'https://da-public-assets.s3.amazonaws.com/innovator-island/innovator-island-logo-150px.png'
   },
   icons: {
     restroom: 'https://d15l97sovqpx31.cloudfront.net/icons/icon-restroom.png',
