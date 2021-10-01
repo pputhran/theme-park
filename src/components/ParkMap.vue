@@ -16,7 +16,7 @@
         <l-icon :icon-anchor="[21, 0]">
           <b-button fluid class="p-1 bg-light">
             <b-img width="32px" height="32x" fluid :src="getIconFromType(facility.type)"></b-img>
-          </b-button>                
+          </b-button>
         </l-icon>
         <l-popup :content="facility.name" />
       </l-marker>
@@ -24,14 +24,12 @@
       <!-- List of rides markers -->
       <l-marker v-for="ride in rides" :lat-lng="ride" :key="ride.id">
         <l-icon :icon-anchor="[50, 30]">
-            <div :key="ride.wait">
-              <b-button variant="light" router-link :to="'/ride/' + ride.id">
-                <b-media>
-                  <b-img slot="aside" :src="ride.thumbnail" width="64"></b-img>
-                  <div v-show="ride.inService"><b-badge :variant="getVariantFromWait(ride.wait)">{{ ride.wait }} {{ $t("words.mins") }}</b-badge></div>
-                  <div v-show="ride.inService===false"><b-badge  variant="danger">{{ $t("phrases.outOfService") }}</b-badge></div>
-                  <h6>{{ ride.name }}</h6>
-                </b-media>
+            <div :key="ride.wait" style="text-align: center;">
+              <b-button variant="light" :to="`/ride/${ride.id}`">
+                <b-img slot="aside" :src="ride.thumbnail" width="64"></b-img>
+                <span v-show="ride.inService" class="badge" :class="getVariantFromWait(ride.wait)">{{ ride.wait }} {{ $t("words.mins") }}</span>
+                <span v-show="!ride.inService" class="badge bg-danger" :class="getVariantFromWait(ride.wait)">{{ $t("phrases.outOfService") }}</span>
+                <h6>{{ ride.name }}</h6>
               </b-button>
               </div>
           </l-icon>
@@ -92,10 +90,10 @@ export default {
     },
     // Return color-coding based upon wait time
     getVariantFromWait: (wait) => {
-      if (wait > 100) return 'danger'
-      if (wait > 90) return 'warning'
-      if (wait > 60) return 'info'
-      if (wait > 0) return 'success'
+      if (wait > 100) return 'bg-danger'
+      if (wait > 90) return 'bg-warning'
+      if (wait > 60) return 'bg-info'
+      if (wait > 0) return 'bg-success'
     }
   },
   mounted: async function () {
@@ -109,7 +107,7 @@ export default {
 <style scoped>
 @import "../../node_modules/leaflet/dist/leaflet.css";
 #map {
-  height: calc(100vh - 65px); 
+  height: calc(100vh - 65px);
   width: 100%;
 }
 h6 {

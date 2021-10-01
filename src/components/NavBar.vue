@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
     <b-navbar type="dark" variant="dark">
-      <b-navbar-brand v-if="['Home'].indexOf($route.name) === 0" href="#">
-        <router-link to="/"><img :src="logoURL" width="100px" alt="Innovator Island"></router-link>
+      <b-navbar-brand v-if="['Home'].indexOf($route.name) === 0">
+        <img :src="logoURL" width="100px" alt="Innovator Island">
       </b-navbar-brand>
 
         <b-button variant="outline-light" class="btn  ml-2 my-2 my-sm-0" v-if="['Home'].indexOf($route.name) != 0" to="/" size="sm">
@@ -13,9 +13,9 @@
           <!-- Language selector icon -->
           <b-dropdown v-if="languageCount > 1" id="languages" variant="outline-light" class="m-md-2 mr-2" right>
             <template v-slot:button-content><font-awesome-icon icon="globe" size="2x"/></template>
-            <b-dropdown-header id="dropdown-header-label">{{ $t('phrases.selectLanguage') }}</b-dropdown-header>        
+            <b-dropdown-header id="dropdown-header-label">{{ $t('phrases.selectLanguage') }}</b-dropdown-header>
             <b-dropdown-item v-for="(lang) in $languages" :key="lang.code" @click="changeLanguage(lang.code)">{{ lang.language }}</b-dropdown-item>
-          </b-dropdown>    
+          </b-dropdown>
         </b-navbar-nav>
         <!-- Photo Gallery icon -->
         <b-button v-if="$store.getters.getPhotos.length !== 0" variant="outline-light" class="btn  ml-2 my-2 my-sm-0" to="/photo-gallery" size="md">
