@@ -93,7 +93,7 @@ export default {
       if (wait > 100) return 'bg-danger'
       if (wait > 90) return 'bg-warning'
       if (wait > 60) return 'bg-info'
-      if (wait > 0) return 'bg-success'
+      return 'bg-success'
     }
   },
   mounted: async function () {
