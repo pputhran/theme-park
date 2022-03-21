@@ -1,7 +1,7 @@
 <template>
   <div id="ride">
     <!-- Ride details -->
-    <b-card 
+    <b-card
       class="m-2"
       style="max-width: 50rem;"
     >
@@ -14,7 +14,7 @@
       <div id="addPhoto" v-if="$appConfig.photoUploadURL !== ''">
         <b-button :disabled="image !== ''" @click="$refs.file.click()" block href="#" variant="primary"  type="file">{{ $t('phrases.addPhoto') }}</b-button>
       </div>
-      <input id="file" accept="image/jpeg" type="file" ref="file" style="display: none" @change="onFileChange"/> 
+      <input id="file" accept="image/jpeg" type="file" ref="file" style="display: none" @change="onFileChange"/>
     </b-card>
     <!-- Wait time information -->
     <div id="waitTimeCard">
@@ -26,9 +26,9 @@
       <div v-show="ride.inService===false">
         <b-card bg-variant="danger" text-variant="white" :header="$t('phrases.currentWaitTime')" class="m-2 text-center">
           <h3>{{ $t("phrases.outOfService") }}</h3>
-        </b-card>  
-      </div>  
-      </div>  
+        </b-card>
+      </div>
+      </div>
   </div>
 </template>
 
@@ -83,7 +83,7 @@ export default {
     createImage (file) {
       // var image = new Image()
       let reader = new FileReader()
-      const MAX_IMAGE_SIZE = 5000000
+      const MAX_IMAGE_SIZE = 20000000
       reader.onload = (e) => {
         console.log('length: ', e.target.result.includes('data:image/jpeg'))
         if (!e.target.result.includes('data:image/jpeg')) {
@@ -147,6 +147,6 @@ img {
   margin-bottom: 10px;
 }
 .spacer {
-    margin-top: 40px; 
+    margin-top: 40px;
 }
 </style>

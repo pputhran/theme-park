@@ -47,7 +47,7 @@
     },
     "errors": {
       "photoWrongType": "Wrong file type - JPG only.",
-      "photoTooLarge": "Image is loo large - 5Mb maximum."
+      "photoTooLarge": "Image is loo large - 20 Mb maximum."
     }
   }
 }
