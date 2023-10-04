@@ -30,5 +30,14 @@ export const appConfig = {
     restroom: 'https://d15l97sovqpx31.cloudfront.net/icons/icon-restroom.png',
     dining: 'https://d15l97sovqpx31.cloudfront.net/icons/icon-dining.png',
     atm: 'https://d15l97sovqpx31.cloudfront.net/icons/icon-atm.png'
+  },
+  "browser": {
+    "crypto": false,
+    "fs": false,
+    "path": false,
+    "os": false,
+    "net": false,
+    "stream": false,
+    "tls": false
   }
 }
