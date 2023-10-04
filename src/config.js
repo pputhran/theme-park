@@ -10,15 +10,15 @@
 
 export const appConfig = {
   // MODULE 1- BACKEND
-  initStateAPI: '', // e.g. https://12abcdef89.execute-api.us-west-2.amazonaws.com/Prod/InitState/
+  initStateAPI: 'https://ghvvzr7597.execute-api.us-west-2.amazonaws.com/Prod/InitState/', // e.g. https://12abcdef89.execute-api.us-west-2.amazonaws.com/Prod/InitState/
   // MODULE 2 - REALTIME
   iot: {
-    poolId: '', // e.g. 'us-west-2:1abcdef-1234-abcd-1234-abcde123456'
-    host: '', // e.g. 'ab12ab12abcde.iot.us-east-1.amazonaws.com'
-    region: '' // e.g. 'us-west-1'
+    poolId: 'us-west-2:4230fa2c-06ce-4ff6-981c-1eb9c0d8a853', // e.g. 'us-west-2:1abcdef-1234-abcd-1234-abcde123456'
+    host: 'a8l81v4i1cj9p-ats.iot.us-west-2.amazonaws.com', // e.g. 'ab12ab12abcde.iot.us-east-1.amazonaws.com'
+    region: 'us-west-2' // e.g. 'us-west-1'
   },
   // MODULE 3 - PHOTOS
-  photoUploadURL: '', // e.g. https://12abcdfg89.execute-api.us-west-2.amazonaws.com/Prod/Upload
+  photoUploadURL: 'https://ghvvzr7597.execute-api.us-west-2.amazonaws.com/Prod/Upload', // e.g. https://12abcdfg89.execute-api.us-west-2.amazonaws.com/Prod/Upload
   //
   // Don't modify anything below this comment!
   //
