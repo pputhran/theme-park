@@ -1,4 +1,4 @@
-    const { defineConfig } = require("@vue/cli-service");
+const { defineConfig } = require("@vue/cli-service");
 const { ProvidePlugin } = require("webpack");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 module.exports = defineConfig({
@@ -19,5 +19,19 @@ module.exports = defineConfig({
             })
         );
     },
+    configureWebpack: {
+        resolve: {
+            alias: {
+                // Add these lines to alias 'tls' to an empty implementation
+                tls: false,
+                url: false,
+                util: false,
+                fs: false,
+                path: false,
+                crypto: false,               
+              }
+        }
+    }
+    
 });
 
